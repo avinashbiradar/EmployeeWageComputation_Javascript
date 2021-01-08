@@ -3,7 +3,9 @@ const IS_PART_TIME = 2;
 const EMP_RATE_PER_HOUR=20;
 const EMP_WORKING_DAYS_FOR_MONTH=20;
 const WORKING_DAYS=20;
-const MAX_HOURS_IN_A_MONTH=100
+const MAX_HOURS_IN_A_MONTH=100;
+const FULL_TIME_HOURS = 8;
+const PART_TIME_HOURS = 4;
 class EmployeeWageProgram{
     employeeCheck=()=>{
       let Present = 1;
@@ -16,8 +18,6 @@ class EmployeeWageProgram{
 }
   
     employeeDailyWage=(employeeCheck)=>{
-        let empHrs ;
-        let empWage;
         let empWageDay;
         let empWageMonth;
         let totalWage=0;
@@ -28,21 +28,19 @@ class EmployeeWageProgram{
         switch(empCheck){
             case  IS_FULL_TIME:
                 console.log("employee is full time ");
-                 empHrs = 8;
-                 empWageDay = empHrs * EMP_RATE_PER_HOUR ;
+                 empWageDay = FULL_TIME_HOURS * EMP_RATE_PER_HOUR ;
                 console.log("employee Wage for a day ",empWageDay);
-                 empWageMonth = empHrs * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
+                 empWageMonth = FULL_TIME_HOURS * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
                console.log("employee Wage for a month ",empWageMonth);
-                 totalWorkHours = totalWorkHours+empHrs;
+                 totalWorkHours = totalWorkHours+FULL_TIME_HOURS;
                 break;
             case IS_PART_TIME:
                 console.log("employee is part time ");
-                 empHrs = 4;
-                 empWageDay = empHrs * EMP_RATE_PER_HOUR ;
+                 empWageDay = PART_TIME_HOURS * EMP_RATE_PER_HOUR ;
                 console.log("employee Wage for a day ",empWageDay);
-                empWageMonth = empHrs * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
+                empWageMonth = PART_TIME_HOURS * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
                 console.log("employee Wage for a month ",empWageMonth);
-               totalWorkHours = totalWorkHours+empHrs;
+               totalWorkHours = totalWorkHours+PART_TIME_HOURS;
                 break;
             default:
                break;
@@ -51,7 +49,13 @@ class EmployeeWageProgram{
      }
      totalWage=(totalWorkHours*totalWorkingDays*EMP_RATE_PER_HOUR);
      console.log("Total wage of employee is : ",totalWage);
+     return totalWage;
     }
-}
 
+    workingHours= (empWageDay) => {
+        let workingHours=empWageDay/EMP_RATE_PER_HOUR;
+        console.log("Work Hours::",workingHours);
+    }
+
+}
 module.exports = new EmployeeWageProgram();
