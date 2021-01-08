@@ -17,6 +17,7 @@ class EmployeeWageProgram{
         let empHrs ;
         let empWage;
         let empWageDay;
+        let empWageMonth;
         let  empCheck = Math.floor(Math.random() * 10) % 3;
         switch(empCheck){
             case  IS_FULL_TIME:
@@ -24,15 +25,19 @@ class EmployeeWageProgram{
                  empHrs = 8;
                  empWageDay = empHrs * EMP_RATE_PER_HOUR ;
                 console.log("employee Wage for a day ",empWageDay);
+                 empWageMonth = empHrs * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
+                console.log("employee Wage for a month ",empWageMonth);
                 break;
             case IS_PART_TIME:
                 console.log("employee is part time ");
                  empHrs = 4;
                  empWageDay = empHrs * EMP_RATE_PER_HOUR ;
                 console.log("employee Wage for a day ",empWageDay);
+                empWageMonth = empHrs * EMP_RATE_PER_HOUR * EMP_WORKING_DAYS_FOR_MONTH;
+                console.log("employee Wage for a month ",empWageMonth);
                 break;
             default:
-                console.log("employee is absent ");
+               break;
         }
      }
 
