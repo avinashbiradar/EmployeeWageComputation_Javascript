@@ -1,3 +1,4 @@
 console.log("Welcome to Employee Wage Program");
 const utility = require('./utility');
-utility.EmployeeWageBuilderIf();
+const { employeeCheck } = require('./utility');
+utility.employeeDailyWage(utility.employeeCheck());
