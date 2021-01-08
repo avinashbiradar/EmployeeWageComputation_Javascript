@@ -6,6 +6,8 @@ const WORKING_DAYS=20;
 const MAX_HOURS_IN_A_MONTH=100;
 const FULL_TIME_HOURS = 8;
 const PART_TIME_HOURS = 4;
+var STORE_DAILY_WAGES = [];
+var STORE_TOTAL_WAGES = [];
 class EmployeeWageProgram{
     employeeCheck=()=>{
       let Present = 1;
@@ -46,10 +48,14 @@ class EmployeeWageProgram{
                break;
         }
         totalWorkingDays++;
+        STORE_DAILY_WAGES.push(empWageDay);
      }
      totalWage=(totalWorkHours*totalWorkingDays*EMP_RATE_PER_HOUR);
+     STORE_TOTAL_WAGES.push(totalWage);
      console.log("Total wage of employee is : ",totalWage);
-     return totalWage;
+     console.log("store daily wages :: ", STORE_DAILY_WAGES);
+     console.log("store total wages :: ", STORE_TOTAL_WAGES);
+      return totalWage;
     }
 
     workingHours= (empWageDay) => {
