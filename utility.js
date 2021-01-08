@@ -55,9 +55,21 @@ class EmployeeWageProgram{
      console.log("Total wage of employee is : ",totalWage);
      console.log("store daily wages :: ", STORE_DAILY_WAGES);
      console.log("store total wages :: ", STORE_TOTAL_WAGES);
-      return totalWage;
-    }
 
+            let mapDailyWage = new Map();
+            let mapMonthlyWage = new Map();
+            for (let i = 0; i < STORE_DAILY_WAGES.length; i++) {
+                mapDailyWage.set(i,STORE_DAILY_WAGES[i]);  
+            }
+            console.log("Wages Daily display",mapDailyWage);
+            for (let i = 0; i < STORE_TOTAL_WAGES.length; i++) {
+                mapMonthlyWage.set(i,STORE_TOTAL_WAGES[i]);  
+            }
+            console.log("Wages Monthly display",mapMonthlyWage);
+   
+    return totalWage;   
+}
+    
     workingHours= (empWageDay) => {
         let workingHours=empWageDay/EMP_RATE_PER_HOUR;
         console.log("Work Hours::",workingHours);
