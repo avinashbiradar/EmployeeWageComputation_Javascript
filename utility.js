@@ -1,5 +1,5 @@
-const IS_FULL_TIME = 1;
-const IS_PART_TIME = 2;
+const IS_FULL_TIME = 0;
+const IS_PART_TIME = 1;
 const EMP_RATE_PER_HOUR=20;
 const EMP_WORKING_DAYS_FOR_MONTH=20;
 const WORKING_DAYS=20;
@@ -11,7 +11,7 @@ var STORE_TOTAL_WAGES = [];
 class EmployeeWageProgram{
     employeeCheck=()=>{
       let Present = 1;
-        let  empCheck = Math.floor(Math.random() * 10) % 3;
+        let  empCheck = Math.floor(Math.random() * 2) ;
         if (empCheck==Present) {
         console.log("employee is present ");
     } else {
@@ -25,7 +25,7 @@ class EmployeeWageProgram{
         let totalWage=0;
         let totalWorkingDays=0;
 		let totalWorkHours=0;
-        let  empCheck = Math.floor(Math.random() * 10) % 3;
+        let  empCheck = Math.floor(Math.random() * 2) ;
         while (totalWorkHours<MAX_HOURS_IN_A_MONTH && totalWorkingDays < WORKING_DAYS) {
         switch(empCheck){
             case  IS_FULL_TIME:
