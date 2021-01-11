@@ -19,7 +19,7 @@ class EmployeeWageProgram{
     }
 }
   
-    employeeDailyWage=(employeeCheck)=>{
+    employeeDailyWage=()=>{
         let empWageDay;
         let empWageMonth;
         let totalWage=0;
